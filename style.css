@@ -1,0 +1,501 @@
+/* =====================
+   GOOGLE FONT
+===================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0a0a0a;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+section{
+    padding:100px 8%;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+ul{
+    list-style:none;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    transition:0.4s;
+}
+
+header.scrolled{
+    background:#111;
+    box-shadow:0 5px 20px rgba(0,0,0,.5);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo h2{
+    color:#d4af37;
+    font-size:28px;
+    letter-spacing:2px;
+}
+
+.logo span{
+    font-size:12px;
+    color:#ccc;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#d4af37;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =====================
+   HERO
+===================== */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top,
+    rgba(212,175,55,.15),
+    transparent 40%),
+    #0a0a0a;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(
+    circle,
+    rgba(212,175,55,.15),
+    transparent);
+    animation:rotateGlow 20s linear infinite;
+}
+
+@keyframes rotateGlow{
+    from{
+        transform:rotate(0);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:65px;
+    color:#d4af37;
+    letter-spacing:4px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:24px;
+    margin-bottom:40px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+/* =====================
+   BUTTONS
+===================== */
+
+.btn{
+    background:#d4af37;
+    color:#000;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 25px #d4af37;
+}
+
+.btn-outline{
+    background:transparent;
+    color:#fff;
+    border:2px solid #d4af37;
+}
+
+/* =====================
+   SECTION TITLE
+===================== */
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    color:#d4af37;
+    font-size:40px;
+}
+
+/* =====================
+   ABOUT
+===================== */
+
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-image img{
+    border-radius:20px;
+}
+
+.about-text{
+    font-size:18px;
+    line-height:1.9;
+}
+
+/* =====================
+   MASTER
+===================== */
+
+.master-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.master-image img{
+    border-radius:20px;
+}
+
+.master-content h3{
+    color:#d4af37;
+    margin-bottom:30px;
+    font-size:30px;
+}
+
+.master-info{
+    display:grid;
+    gap:20px;
+}
+
+.info-card{
+    background:#151515;
+    padding:25px;
+    border-radius:15px;
+    border:1px solid rgba(212,175,55,.2);
+}
+
+.info-card:hover{
+    border-color:#d4af37;
+}
+
+/* =====================
+   CLASSES
+===================== */
+
+.class-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#151515;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    font-size:20px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(212,175,55,.3);
+}
+
+.schedule{
+    margin-top:50px;
+    text-align:center;
+}
+
+.schedule h3{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+/* =====================
+   COUNTERS
+===================== */
+
+.counter-section{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.counter-box{
+    background:#151515;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.counter-box h2{
+    color:#d4af37;
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+/* =====================
+   GALLERY
+===================== */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery-grid img{
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+.gallery-grid img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px rgba(212,175,55,.5);
+}
+
+/* =====================
+   CONTACT
+===================== */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin-bottom:20px;
+    font-size:18px;
+}
+
+/* =====================
+   FORM
+===================== */
+
+form{
+    max-width:700px;
+    margin:auto;
+}
+
+form input,
+form textarea{
+    width:100%;
+    padding:18px;
+    background:#151515;
+    color:white;
+    border:none;
+    margin-bottom:20px;
+    border-radius:10px;
+}
+
+textarea{
+    min-height:150px;
+    resize:none;
+}
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+    text-align:center;
+    background:#111;
+    padding:50px 20px;
+}
+
+footer h3{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.social{
+    margin-bottom:20px;
+}
+
+.social a{
+    font-size:28px;
+    margin:0 15px;
+    transition:0.4s;
+}
+
+.social a:hover{
+    color:#d4af37;
+}
+
+/* =====================
+   WHATSAPP BUTTON
+===================== */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    z-index:1000;
+}
+
+/* =====================
+   TOP BUTTON
+===================== */
+
+#topBtn{
+    position:fixed;
+    bottom:95px;
+    right:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    background:#d4af37;
+    border-radius:50%;
+    cursor:pointer;
+    display:none;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .about-container,
+    .master-container{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+}
+
+/* LIGHTBOX */
+
+#lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+#lightbox.active{
+  display:flex;
+}
+
+#lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:20px;
+}
+
+/* SCROLL ANIMATION */
+
+.hidden-animation{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+
+.show-animation{
+  opacity:1;
+  transform:translateY(0);
+}
