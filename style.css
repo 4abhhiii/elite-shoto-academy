@@ -72,22 +72,25 @@ header.scrolled{
 }
 
 .nav-links{
-    display:flex;
-    gap:30px;
-}
-
-.nav-links a{
-    transition:0.3s;
-}
-
-.nav-links a:hover{
-    color:#d4af37;
-}
-
-.menu-btn{
+    position:absolute;
+    top:80px;
+    right:0;
+    width:250px;
+    background:#111;
+    flex-direction:column;
+    padding:30px;
     display:none;
-    font-size:28px;
-    cursor:pointer;
+    gap:20px;
+    z-index:1001;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
 }
 
 /* =====================
@@ -498,4 +501,69 @@ footer h3{
 .show-animation{
   opacity:1;
   transform:translateY(0);
+}
+
+/* =====================
+   MODERN MOBILE SIDEBAR
+===================== */
+
+@media (max-width:900px){
+
+  .menu-btn{
+    display:block;
+    font-size:30px;
+    cursor:pointer;
+    z-index:1002;
+  }
+
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-300px; /* Hidden outside screen */
+    width:75%;
+    max-width:300px;
+    height:100vh;
+    background:#111;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    transition:0.4s ease;
+    z-index:1001;
+    box-shadow:-5px 0 20px rgba(0,0,0,0.5);
+  }
+
+  .nav-links.show{
+    right:0; /* Slide in */
+  }
+
+  .nav-links a{
+    font-size:22px;
+    color:#fff;
+    transition:0.3s;
+  }
+
+  .nav-links a:hover{
+    color:#d4af37;
+  }
+
+  .menu-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(5px);
+    opacity:0;
+    visibility:hidden;
+    transition:0.4s ease;
+    z-index:1000;
+  }
+
+  .menu-overlay.show{
+    opacity:1;
+    visibility:visible;
+  }
 }

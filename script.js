@@ -1,3 +1,4 @@
+alert("JS Loaded");
 // =========================
 // NAVBAR SCROLL EFFECT
 // =========================
@@ -13,14 +14,32 @@ window.addEventListener("scroll", () => {
 });
 
 // =========================
-// MOBILE MENU
+// MODERN MOBILE SIDEBAR
 // =========================
 
-const menuBtn = document.querySelector(".menu-btn");
-const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", () => {
+  const menuBtn = document.querySelector(".menu-btn");
+  const navLinks = document.querySelector(".nav-links");
+  const overlay = document.querySelector(".menu-overlay");
 
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
+  if (menuBtn && navLinks && overlay) {
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        overlay.classList.remove("show");
+      });
+    });
+  }
 });
 
 // =========================
@@ -50,20 +69,21 @@ topBtn.addEventListener("click", () => {
 
 const joinForm = document.getElementById("joinForm");
 
-joinForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+if (joinForm) {
+  joinForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const inputs = this.querySelectorAll("input, textarea");
+    const inputs = this.querySelectorAll("input, textarea");
 
-  const name = inputs[0].value;
-  const age = inputs[1].value;
-  const parent = inputs[2].value;
-  const phone = inputs[3].value;
-  const address = inputs[4].value;
-  const experience = inputs[5].value;
-  const message = inputs[6].value;
+    const name = inputs[0].value;
+    const age = inputs[1].value;
+    const parent = inputs[2].value;
+    const phone = inputs[3].value;
+    const address = inputs[4].value;
+    const experience = inputs[5].value;
+    const message = inputs[6].value;
 
-  const text =
+    const text =
 `🥋 New Admission Request
 
 Name: ${name}
@@ -74,13 +94,14 @@ Address: ${address}
 Previous Experience: ${experience}
 Message: ${message}`;
 
-  const whatsapp =
-    `https://wa.me/917561099244?text=${encodeURIComponent(text)}`;
+    const whatsapp =
+      `https://wa.me/917561099244?text=${encodeURIComponent(text)}`;
 
-  window.open(whatsapp, "_blank");
+    window.open(whatsapp, "_blank");
 
-  this.reset();
-});
+    this.reset();
+  });
+}
 
 // =========================
 // GALLERY LIGHTBOX
